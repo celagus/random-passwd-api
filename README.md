@@ -1,6 +1,6 @@
 # Intro
 
-This is a RESTful API for random password generation.
+This is a RESTful API built in Flask for random password generation.
 
 You can input th number of lowercase chars, uppercase chars, digits and the password length you wish, then the API returns a random password.
 
