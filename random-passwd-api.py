@@ -16,7 +16,7 @@ def get_params():
 
 	#requisite 1: min length cannot be less than 30 chars
 	#requisite 2: number of lc, uc and digits cannot be less than 10 each one
-	if length>=30 and lowercase>=10 and uppercase>=10 and digits>=10:
+	if length>=(lowercase+uppercase+digits) and length>=8 and lowercase>=2 and uppercase>=2 and digits>=2:
 		passwd = generate_passwd(length, uppercase, lowercase, digits)
 		return { "password": passwd }
 	else:
