@@ -34,7 +34,7 @@ HTTP/1.1" 200 -
 
 ## Restrictions
 
-* Total number of password characters cannot be less than 8 or the add of all other params
-* The number of lowercase letters cannot be lower than 10
-* The number of uppercase letters cannot be lower than 10
-* The number of digits cannot be lower than 10
+* Total number of password characters cannot be less than 8 or the sum of all other params
+* The number of lowercase letters cannot be lower than 2
+* The number of uppercase letters cannot be lower than 2
+* The number of digits cannot be lower than 2
