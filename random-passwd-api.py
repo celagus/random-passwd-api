@@ -21,10 +21,10 @@ def get_params():
 		return { "password": passwd }
 	else:
 		return {"statusCode":400, "body":"""Bad Request
-    	Total number of password characters cannot be less than 30
-    	The number of lowercase letters cannot be lower than 10
-    	The number of uppercase letters cannot be lower than 10
-		The number of digits cannot be lower than 10"""}	
+		Total number of password characters cannot be less than 8 and the add of all other params
+		The number of lowercase letters cannot be lower than 2
+		The number of uppercase letters cannot be lower than 2
+		The number of digits cannot be lower than 2"""}	
 
 def generate_passwd(minlen, minuchars, minlchars, minnumbers):
 	#random sample lists for each char type
