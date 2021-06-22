@@ -9,7 +9,6 @@ RUN pip3 install --no-cache-dir -r ./requirements.txt
 
 # Execute API script
 CMD [ "python3", "./app/random-passwd-api.py" ]
-#ENTRYPOINT ["./entrypoint.sh"]
 
 # Expose port 5000/tcp (Flask API default port)
 EXPOSE 5000/tcp
