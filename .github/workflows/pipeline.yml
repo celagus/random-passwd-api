@@ -38,13 +38,7 @@ jobs:
   job2:
     name: Build and Push Docker Image
     needs: job1
-    env:
-      DDOJO_URL: https://dojo-test.security.k8s.tfgco.com
-      JOB_NAME: GHA-CI
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
