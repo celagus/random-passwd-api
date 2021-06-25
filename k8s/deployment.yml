@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: random-passwd
+  name: random-passwd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: random-passwd
+  template:
+    metadata:
+      labels:
+        app: random-passwd
+    spec:
+      containers:
+      - image: celagus/random-passwd-api
+        name: random-passwd
+        securityContext:
+          allowPrivilegeEscalation: false
