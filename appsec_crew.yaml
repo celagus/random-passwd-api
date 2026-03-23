@@ -17,6 +17,8 @@
 global:
   # Minimum severity for dependency (CVSS) and Semgrep findings.
   # Values: critical | high | medium | low
+  # NOTE: With `high`, only Semgrep findings at HIGH/CRITICAL/ERROR (or unlabeled → treated as HIGH) pass the
+  # floor. Use `medium` if you expect more Semgrep noise from rules tagged MEDIUM.
   min_severity: high
   github:
     token_env: GITHUB_TOKEN
@@ -58,6 +60,8 @@ agents:
       semgrep:
         binary: semgrep
         config_path: null
+        # If CI shows 0 Semgrep findings but `semgrep scan` locally finds issues, try `llm_triage: false` to
+        # rule out the LLM dismissing everything; check workflow JSON for semgrep_findings_before_min_severity.
         extra_configs:
           - auto
           - p/security-audit
