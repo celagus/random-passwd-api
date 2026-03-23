@@ -15,7 +15,9 @@ jobs:
   crew:
     uses: celagus/appsec-crew/.github/workflows/appsec-crew-reusable.yml@develop
     with:
-      package_path: .
+      # This repo is not a copy of appsec-crew; install the package from GitHub.
+      install_from_github: true
+      appsec_crew_ref: develop
       scan_path: .
       config_file: ""
     secrets: inherit
