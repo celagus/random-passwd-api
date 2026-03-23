@@ -4,8 +4,6 @@ name: appsec-crew run
 on:
   workflow_dispatch:
   pull_request:
-    branches:
-      - appsec-crew
 #  schedule:
 #    - cron: "0 6 * * 1"
 
