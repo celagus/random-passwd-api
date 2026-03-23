@@ -41,6 +41,7 @@ agents:
       model: deepseek-chat
       api_key_env: OPENAI_API_KEY
       base_url: https://api.deepseek.com
+      temperature: 0
     tools:
       osv_scanner:
         binary: osv-scanner
@@ -52,6 +53,7 @@ agents:
       model: deepseek-chat
       api_key_env: OPENAI_API_KEY
       base_url: https://api.deepseek.com
+      temperature: 0
     tools:
       semgrep:
         binary: semgrep
@@ -71,6 +73,8 @@ agents:
     llm:
       model: deepseek-chat
       api_key_env: OPENAI_API_KEY
+      base_url: https://api.deepseek.com
+      temperature: 0
     tools:
       # In this template and in the bundled default: no Jira / webhook / Splunk.
       # Enable them here when you maintain your own `appsec_crew.yaml`.
