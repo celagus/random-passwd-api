@@ -19,7 +19,7 @@ global:
   # Values: critical | high | medium | low
   # NOTE: With `high`, only Semgrep findings at HIGH/CRITICAL/ERROR (or unlabeled → treated as HIGH) pass the
   # floor. Use `medium` if you expect more Semgrep noise from rules tagged MEDIUM.
-  min_severity: high
+  min_severity: medium
   github:
     token_env: GITHUB_TOKEN
     # token: use only if you must override GITHUB_TOKEN from a secret manager (never commit real tokens).
