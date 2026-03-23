@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   crew:
-    uses: ./.github/workflows/appsec-crew-reusable.yml@develop
+    uses: celagus/appsec-crew/.github/workflows/appsec-crew-reusable.yml@develop
     with:
       package_path: .
       scan_path: .
