@@ -35,6 +35,7 @@ agents:
     tools:
       betterleaks:
         binary: betterleaks
+        version: v1.1.1
         config_path: null
 
   dependencies_reviewer:
@@ -47,6 +48,7 @@ agents:
     tools:
       osv_scanner:
         binary: osv-scanner
+        version: v2.3.3
         config_path: null
 
   code_reviewer:
@@ -59,6 +61,7 @@ agents:
     tools:
       semgrep:
         binary: semgrep
+        version: "1.156.0"
         config_path: null
         # LLM triage is off by default in appsec-crew; set `llm_triage: true` here to enable post-scan dismissal.
         extra_configs:
@@ -68,7 +71,7 @@ agents:
           - p/javascript
           - p/typescript
           - p/java
-          - p/go
+          - p/golang
           - p/rust
 
   reporter:
