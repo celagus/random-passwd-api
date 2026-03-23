@@ -60,8 +60,7 @@ agents:
       semgrep:
         binary: semgrep
         config_path: null
-        # If CI shows 0 Semgrep findings but `semgrep scan` locally finds issues, try `llm_triage: false` to
-        # rule out the LLM dismissing everything; check workflow JSON for semgrep_findings_before_min_severity.
+        # LLM triage is off by default in appsec-crew; set `llm_triage: true` here to enable post-scan dismissal.
         extra_configs:
           - auto
           - p/security-audit
