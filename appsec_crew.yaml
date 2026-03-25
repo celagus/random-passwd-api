@@ -1,18 +1,21 @@
-# AppSec Crew — configuration template.
+# AppSec Crew — local config for this repository (random-passwd-api).
 #
-# Usage:
-#   - Copy to `appsec_crew.yaml` at the root of the repository you scan and customize it.
-#   - If `appsec_crew.yaml` is missing, the CLI loads the packaged `bundled_appsec_crew.yaml`
-#     (same baseline): reporter integrations (Jira, webhook, Splunk) stay disabled.
+# Upstream template to diff against when upgrading: celagus/appsec-crew `appsec_crew.yaml` at repo root.
+# Packaged fallback (if this file were removed): `bundled_appsec_crew.yaml` inside the appsec_crew package.
 #
 # Precedence: non-empty YAML values override environment variables for secrets.
 #
 # CrewAI: every enabled agent needs `llm.api_key` or `llm.api_key_env`.
 #
-# Exceptions / allowlists: use each tool's native config in the scanned repository:
+# PR vs batch: GitHub Actions sets `GITHUB_EVENT_NAME`. For local “PR mode” tests, set e.g.
+#   export GITHUB_EVENT_NAME=pull_request
+#   export APPSEC_CREW_PR_NUMBER=1
+# (plus GITHUB_TOKEN, GITHUB_REPOSITORY). Batch mode: unset those or use schedule/workflow_dispatch.
+#
+# Tool-native configs in this repo:
 #   - Betterleaks / Gitleaks: `.betterleaks.toml` or `.gitleaks.toml`
-#   - OSV-Scanner: `osv-scanner.toml` (see examples/osv-scanner.toml.example)
-#   - Semgrep: `.semgrep.yml` (see examples/semgrep-local-rules.example.yml)
+#   - OSV-Scanner: `osv-scanner.toml` — example starter: celagus/appsec-crew examples/osv-scanner.toml.example
+#   - Semgrep: `.semgrep.yml` — example: celagus/appsec-crew examples/semgrep-local-rules.example.yml
 
 global:
   # Minimum severity for dependency (CVSS) and Semgrep findings.
